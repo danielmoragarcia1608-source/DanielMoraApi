@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DataHub | Consulta de usuarios</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= LOGIN ================= -->
+
+    <section id="loginView" class="login-view">
+
+        <div class="login-decoration decoration-one"></div>
+        <div class="login-decoration decoration-two"></div>
+
+        <div class="login-card">
+
+           <div class="cali-logo-container">
+
+    <div class="logo-glow"></div>
+
+    <div class="cali-logo">
+
+        <img
+            src="Escudo_Deportivo_Cali.png"
+            alt="Escudo Deportivo Cali"
+        >
+
+    </div>
+
+</div>
+
+    <h1>Bienvenido</h1>
+
+    <p>
+        Ingresa para acceder al panel
+    </p>
+
+</div>
+            <form id="loginForm">
+
+                <div class="input-group">
+
+                    <label for="username">
+                        Usuario
+                    </label>
+
+                    <div class="input-wrapper">
+                        <span>◉</span>
+
+                        <input
+                            type="text"
+                            id="username"
+                            placeholder="Ingresa tu usuario"
+                            autocomplete="username"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="password">
+                        Contraseña
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span>●</span>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Ingresa tu contraseña"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="password-button"
+                        >
+                            Mostrar
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="loginError"
+                    class="login-error"
+                ></div>
+
+
+                <button
+                    type="submit"
+                    class="login-button"
+                >
+                    Iniciar sesión
+                </button>
+
+            </form>
+
+            <div class="login-footer">
+                Proyecto académico · Consumo de API REST
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <section id="dashboardView" class="dashboard-view hidden">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+
+                <div class="brand-logo">
+                    DH
+                </div>
+
+                <div>
+                    <strong>DataHub</strong>
+                    <span>Panel académico</span>
+                </div>
+
+            </div>
+
+
+            <nav class="navigation">
+
+                <a
+                    href="#"
+                    class="nav-item active"
+                >
+                    <span>▦</span>
+                    Dashboard
+                </a>
+
+                <a
+                    href="#"
+                    class="nav-item"
+                >
+                    <span>♙</span>
+                    Usuarios
+                </a>
+
+                <a
+                    href="#"
+                    class="nav-item"
+                >
+                    <span>◈</span>
+                    API REST
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <div class="connection">
+
+                    <span class="connection-dot"></span>
+
+                    <div>
+                        <strong>API conectada</strong>
+                        <small>Servicio disponible</small>
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="logoutButton"
+                    class="logout-button"
+                >
+                    Cerrar sesión
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- CONTENIDO -->
+
+        <main class="main-content">
+
+            <header class="top-header">
+
+                <div>
+
+                    <span class="welcome">
+                        Panel principal
+                    </span>
+
+                    <h1>
+                        Usuarios
+                    </h1>
+
+                </div>
+
+
+                <div class="profile">
+
+                    <div class="profile-avatar">
+                        A
+                    </div>
+
+                    <div>
+                        <strong>Administrador</strong>
+                        <span>Usuario activo</span>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- ESTADÍSTICAS -->
+
+            <section class="stats">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        ♙
+                    </div>
+
+                    <div>
+                        <span>Total usuarios</span>
+                        <strong id="totalUsers">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        ◉
+                    </div>
+
+                    <div>
+                        <span>Ciudades</span>
+                        <strong id="totalCities">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        ✓
+                    </div>
+
+                    <div>
+                        <span>Estado API</span>
+                        <strong id="apiState">
+                            Activa
+                        </strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CONTENIDO PRINCIPAL -->
+
+            <section class="content-card">
+
+                <div class="content-header">
+
+                    <div>
+                        <h2>
+                            Usuarios registrados
+                        </h2>
+
+                        <p id="resultMessage">
+                            Consultando información...
+                        </p>
+                    </div>
+
+
+                    <button
+                        id="reloadButton"
+                        class="reload-button"
+                    >
+                        ↻ Actualizar
+                    </button>
+
+                </div>
+
+
+                <div class="search-container">
+
+                    <span>⌕</span>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Buscar por nombre, correo o ciudad..."
+                    >
+
+                </div>
+
+
+                <div
+                    id="usersContainer"
+                    class="users-grid"
+                ></div>
+
+            </section>
+
+        </main>
+
+    </section>
+
+
+    <!-- ================= MODAL ================= -->
+
+    <div
+        id="userModal"
+        class="modal"
+    >
+
+        <div class="modal-content">
+
+            <button
+                id="closeModal"
+                class="close-modal"
+            >
+                ×
+            </button>
+
+            <div
+                id="modalAvatar"
+                class="modal-avatar"
+            >
+                A
+            </div>
+
+            <h2 id="modalName">
+                Usuario
+            </h2>
+
+            <p class="modal-subtitle">
+                Información del usuario
+            </p>
+
+
+            <div class="details">
+
+                <div class="detail">
+                    <span>Correo</span>
+                    <strong id="modalEmail"></strong>
+                </div>
+
+                <div class="detail">
+                    <span>Teléfono</span>
+                    <strong id="modalPhone"></strong>
+                </div>
+
+                <div class="detail">
+                    <span>Ciudad</span>
+                    <strong id="modalCity"></strong>
+                </div>
+
+                <div class="detail">
+                    <span>Empresa</span>
+                    <strong id="modalCompany"></strong>
+                </div>
+
+                <div class="detail">
+                    <span>Sitio web</span>
+                    <strong id="modalWebsite"></strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
