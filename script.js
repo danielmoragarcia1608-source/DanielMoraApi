@@ -2,10 +2,6 @@ const API_URL =
     "https://jsonplaceholder.typicode.com/users";
 
 
-/* ========================================
-   ELEMENTOS
-======================================== */
-
 const loginView =
     document.getElementById("loginView");
 
@@ -61,9 +57,6 @@ const closeModal =
 let usuarios = [];
 
 
-/* ========================================
-   LOGIN
-======================================== */
 
 loginForm.addEventListener(
     "submit",
@@ -103,10 +96,6 @@ loginForm.addEventListener(
 );
 
 
-/* ========================================
-   MOSTRAR / OCULTAR CONTRASEÑA
-======================================== */
-
 togglePassword.addEventListener(
     "click",
     function() {
@@ -131,9 +120,6 @@ togglePassword.addEventListener(
 );
 
 
-/* ========================================
-   SESIÓN
-======================================== */
 
 function comprobarSesion() {
 
@@ -182,10 +168,6 @@ logoutButton.addEventListener(
     cerrarSesion
 );
 
-
-/* ========================================
-   CONSUMIR API
-======================================== */
 
 async function cargarUsuarios() {
 
@@ -260,10 +242,6 @@ async function cargarUsuarios() {
 }
 
 
-/* ========================================
-   ESTADÍSTICAS
-======================================== */
-
 function actualizarEstadisticas() {
 
     totalUsers.textContent =
@@ -285,9 +263,6 @@ function actualizarEstadisticas() {
 }
 
 
-/* ========================================
-   MOSTRAR USUARIOS
-======================================== */
 
 function mostrarUsuarios(lista) {
 
@@ -398,9 +373,6 @@ function mostrarUsuarios(lista) {
 }
 
 
-/* ========================================
-   BUSCADOR
-======================================== */
 
 searchInput.addEventListener(
     "input",
@@ -445,10 +417,6 @@ searchInput.addEventListener(
     }
 );
 
-
-/* ========================================
-   DETALLE DEL USUARIO
-======================================== */
 
 usersContainer.addEventListener(
     "click",
@@ -544,9 +512,6 @@ function abrirModal(usuario) {
 }
 
 
-/* ========================================
-   CERRAR MODAL
-======================================== */
 
 closeModal.addEventListener(
     "click",
@@ -578,10 +543,6 @@ function cerrarModal() {
 
 }
 
-
-/* ========================================
-   ACTUALIZAR
-======================================== */
 
 reloadButton.addEventListener(
     "click",
