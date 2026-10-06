@@ -45,11 +45,6 @@ body {
     display: none !important;
 }
 
-
-/* ========================================
-   LOGIN
-======================================== */
-
 .login-view {
     min-height: 100vh;
 
@@ -232,8 +227,6 @@ body {
 }
 
 
-/* LOGIN BUTTON */
-
 .login-button {
     width: 100%;
     height: 46px;
@@ -271,18 +264,11 @@ body {
 }
 
 
-/* ========================================
-   DASHBOARD
-======================================== */
-
 .dashboard-view {
     min-height: 100vh;
 
     display: flex;
 }
-
-
-/* SIDEBAR */
 
 .sidebar {
     width: 245px;
@@ -344,8 +330,6 @@ body {
 }
 
 
-/* NAV */
-
 .navigation {
     display: flex;
 
@@ -383,8 +367,6 @@ body {
     background: var(--primary);
 }
 
-
-/* SIDEBAR BOTTOM */
 
 .sidebar-bottom {
     margin-top: auto;
@@ -540,9 +522,6 @@ body {
 }
 
 
-/* ========================================
-   STATS
-======================================== */
 
 .stats {
     display: grid;
@@ -614,9 +593,6 @@ body {
 }
 
 
-/* ========================================
-   CONTENT
-======================================== */
 
 .content-card {
     background: white;
@@ -651,7 +627,6 @@ body {
 }
 
 
-/* RELOAD */
 
 .reload-button {
     border: 1px solid var(--border);
@@ -672,7 +647,6 @@ body {
 }
 
 
-/* SEARCH */
 
 .search-container {
     height: 42px;
@@ -709,9 +683,6 @@ body {
 }
 
 
-/* ========================================
-   USERS
-======================================== */
 
 .users-grid {
     display: grid;
@@ -842,9 +813,6 @@ body {
 }
 
 
-/* ========================================
-   MODAL
-======================================== */
 
 .modal {
     position: fixed;
@@ -978,10 +946,6 @@ body {
 }
 
 
-/* ========================================
-   RESPONSIVE
-======================================== */
-
 @media (max-width: 1000px) {
 
     .users-grid {
@@ -1032,9 +996,6 @@ body {
 
 }
 
-/* ========================================
-   ESCUDO DEPORTIVO CALI
-======================================== */
 
 .cali-logo-container {
     width: 110px;
@@ -1052,7 +1013,6 @@ body {
 }
 
 
-/* Brillo detrás del escudo */
 
 .logo-glow {
     position: absolute;
@@ -1068,9 +1028,6 @@ body {
 
     animation: glowPulse 2.5s ease-in-out infinite;
 }
-
-
-/* Escudo */
 
 .cali-logo {
     position: relative;
@@ -1110,9 +1067,6 @@ body {
 }
 
 
-/* ========================================
-   ANIMACIONES
-======================================== */
 
 @keyframes logoEntrance {
 
@@ -1233,8 +1187,6 @@ body {
 }
 
 
-/* Entrada */
-
 @keyframes logoEntrada {
 
     0% {
@@ -1269,8 +1221,6 @@ body {
 
 }
 
-
-/* Brillo */
 
 @keyframes brillo {
 
