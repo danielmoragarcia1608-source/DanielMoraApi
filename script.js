@@ -185,7 +185,10 @@ async function cargarUsuarios() {
     try {
 
         const response =
-            await fetch(API_URL);
+            await fetch(API_URL);   // Aca puedes usar mas metodos del fetch , para acceder a los headers o usar .then y .catch
+                                    // tambien puedes hacer un console.log("response", response), para que veas que es response 
+                                    // en la consola del navegador, vas a ver que es un ARRAY
+                                    // y por eso ese ARRAY nos permite hacer un .map y mostrar cada uno de los datos de los objetos contenidos en el ARRAY.
 
 
         if (!response.ok) {
@@ -197,7 +200,7 @@ async function cargarUsuarios() {
         }
 
 
-        const data =
+        const data =                //  aca cambiaste response por data  , algo que pudiste hacer en la linea 187 donde usaste fetch, a traves del ".then" y el ".catch"
             await response.json();
 
 
